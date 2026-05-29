@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador Fullstack | IA y Desarrollo Web</title>
+    <link rel="icon" href="Imagenes y Videos/circuito.ico" type="image/x-icon"> <!-- Define el icono del servidor -->
+
+    <!---- SEO Básico ---->
+    <meta name="description" content="Desarrollador Web en formación enfocado en HTML5, CSS, JavaScript y buenas prácticas de desarrollo web. Actualmente aprendiendo tecnologías Frontend y construyendo proyectos reales."> <!-- Descripción de la página web -->
+    <meta name="author" content="Claudio Pacheco"> <!-- Indica quién es el autor/creador de la página. -->
+    <meta name="keywords" content="portfolio, fullstack, html, html5, css, javascript"> <!-- Palabras clave de mi Web (ya no se usa para evitar spam) -->
+    <meta name="robots" content="index, follow"> <!-- index (mostrar página en Google) | follow (podes seguir mis enlaces) -->
+    <meta name="theme-color" content="#0f172a"> <!-- Define el color principal del navegador en móviles (oscuro) -->
+
+    <!---- Compartir ---->
+    <meta property="og:title" content="Mi primer Portafolio profesional"> <!-- Define el título que aparece cuando compartes tu web en redes sociales o apps -->
+    <meta property="og:description" content="Mira mis últimos proyectos de desarrollo web!"> <!-- Define la descripción que aparece cuando compartes tu web en redes sociales o apps -->
+    <meta property="og:image" content="Imagenes y Videos/CP.png"> <!-- Define la foto que aparece cuando compartes tu web en redes sociales o apps -->
+    <meta property="og:url" content="#"> <!-- Define la URL oficial de tu página cuando alguien la comparte -->
+    <meta property="og:type" content="website"> <!-- Le dice a redes sociales qué tipo de contenido estás compartiendo -->
+
+    <style>
+
+        /* Reset básico */
+        *{
+            margin: 0; /* sirve para crear espacio POR FUERA de un elemento. */
+            padding: 0; /* sirve para crear espacio POR DENTRO de un elemento. */
+            box-sizing: border-box; /* Hace que el tamaño de los elementos sea más lógico y fácil de controlar. Evita que padding y border agranden inesperadamente una caja.*/
+        }
+
+        body{
+            font-family: Arial, sans-serif; /* Define la tipografía (fuente de letra) de un texto o de toda la página. */
+            background-color: #f5f5f5; /* Define el color de todo el fondo */
+            color: #333; /* Define el color del texto. */
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header{
+            background-color: #222; /* Solo el color del Header será asi */
+            color: white; /* Solo el color del Header será asi */
+            text-align: center; /* Solo el texto del Header será asi */
+            padding: 30px;
+        }
+
+        header h1{
+            margin-bottom: 10px;
+        }
+
+        /* Navegación */
+        nav ul{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover{
+            color: lightblue;
+        }
+
+        /* Contenedor principal */
+        main{
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        /* Secciones */
+        section{
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        section h2{
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        /* Sobre mí */
+        .sobre-mi{
+            text-align: center;
+        }
+
+        .sobre-mi img{
+            width: 180px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Habilidades */
+        .skills{
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .skill-card{
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .skill-card ul{
+            margin-left: 20px;
+        }
+
+        /* Proyectos */
+        .proyectos{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card{
+            background-color: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card img{
+            width: 100px;
+        }
+
+        .card-content{
+            padding: 20px;
+        }
+
+        .card a{
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #222;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .card a:hover{
+            background-color: #444;
+        }
+
+        /* Formulario */
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        input,
+        textarea{
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button{
+            background-color: #222;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background-color: #444;
+        }
+
+        /* Footer */
+        footer{
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a{
+            color: lightblue;
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media(max-width:768px){
+            .skills{
+                flex-direction: column;
+            }
+            .proyectos{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Titulo -->
+        <h1>Claudio Pacheco</h1> <!-- Titulo h1 -->
+        <p>Desarrollador en formación Fullstack | CSS3 | JavaScript</p> <!-- Párrafo -->
+
+        <nav> <!-- Menú de navegación -->
+            <ul> <!-- Crea una lista desordenada -->
+                <li><a href="#sobre-mi">Sobre mí</a></li> <!-- Esto crea un elemento del menú de navegación que lleva a una parte de la página -->
+                <li><a href="#habilidades">Habilidades</a></li> <!-- Esto crea un elemento del menú de navegación que lleva a una parte de la página -->
+                <li><a href="#proyectos">Proyectos</a></li> <!-- Esto crea un elemento del menú de navegación que lleva a una parte de la página -->
+                <li><a href="#contacto">Contacto</a></li> <!-- Esto crea un elemento del menú de navegación que lleva a una parte de la página -->
+            </ul>
+        </nav>
+    </header>
+
+        <main> <!-- Contenido principal de la página -->
+
+            <section id="sobre-mi" class="sobre-mi"> <!-- Crea una sección de la página y además le pone un id → para navegación una class → para estilos CSS -->
+                <h2>Sobre mí</h2> <!-- Subtitulo -->
+                <img src="Imagenes y Videos/Yo.png" alt="Foto de perfil del autor">
+
+                <p>
+                    Soy un desarrollador Fullstack en formación
+                    apasionado por crear aplicaciones modernas
+                    y experiencias web atractivas.
+                </p>
+
+            </section>
+
+            <section id="habilidades">
+                <h2>Habilidades</h2>
+
+                <div class="skills">
+                    <article class="skill-card">
+                        <h3>Frontend</h3>
+                        <ul>
+                            <li>HTML5</li>
+                            <li>CSS3</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card">
+                        <h3>Backend</h3>
+                        <ul>
+                            <li>Node.js</li>
+                            <li>APIs</li>
+                        </ul>
+                    </article>
+
+                    <article class="skill-card">
+                        <h3>Herramientas</h3>
+                        <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                            <li>VS Code</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section id="proyectos">
+                <h2>Proyectos</h2>
+
+                <div class="proyectos">
+                    <article class="card">
+                        <img src="Imagenes y Videos/Proyecto.png" alt="Primer proyecto">
+                        <div class="card-content">
+                            <h3>Proyecto Web</h3>
+                            <p>Mi primer proyecto con HTML</p>
+                            <a href="2_index.html" target="_blank" rel="noopener">Ver proyecto</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <img src="Imagenes y Videos/Proyecto.png" alt="Segundo proyecto">
+                        <div class="card-content">
+                            <h3>Segundo proyecto web con IA</h3>
+                            <p>Sitio web moderno con diseño responsive con ayuda de IA</p>
+                            <a href="#" target="_blank" rel="noopener">Ver proyecto</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="contacto">
+                <h2>Contacto</h2>
+            
+                <form method="POST">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="1_nombre" id="nombre" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" name="2_email" id="email" pattern=".+@.+\..+" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="3_mensaje" id="mensaje" rows="5" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+
+        </main>
+        <footer>
+            <p>© 2026 Claudio Pacheco</p>
+            <p>
+                <a href="https://github.com/elclauxx">GitHub</a>
+            </p>
+        </footer>
+</body>
+</html>
